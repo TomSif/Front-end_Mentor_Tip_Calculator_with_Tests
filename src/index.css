@@ -1,0 +1,73 @@
+@import "tailwindcss";
+
+@theme {
+  --font-mono: "Space Mono", ui-monospace, monospace;
+
+  --color-grey-600: #3d6666;
+  --color-grey-550: #547878;
+  --color-grey-500: #5e7a7d;
+  --color-grey-400: #7f9d9f;
+  --color-grey-300: #9ebbbd;
+  --color-grey-200: #c5e4e7;
+  --color-grey-50: #f3f9fa;
+
+  --color-green-900: #00474b;
+  --color-green-800: #085c61;
+  --color-green-750: #0d686d;
+  --color-green-400: #26c2ae;
+  --color-green-200: #9fe8df;
+
+  --color-orange-400: #e17052;
+}
+
+@utility text-preset-1 {
+  font-family: var(--font-mono);
+  font-size: 3rem; /* 48px */
+  line-height: 1.4792em; /* 71px */
+  letter-spacing: -0.0208em; /* -1px */
+  font-weight: 700;
+}
+
+@utility text-preset-2 {
+  font-family: var(--font-mono);
+  font-size: 2rem; /* 32px */
+  line-height: 1.4688em; /* 47px */
+  letter-spacing: -0.0209em; /* -0.67px */
+  font-weight: 700;
+}
+
+@utility text-preset-3 {
+  font-family: var(--font-mono);
+  font-size: 1.5rem; /* 24px */
+  line-height: 1.5em; /* 36px */
+  letter-spacing: 0em;
+  font-weight: 700;
+}
+
+@utility text-preset-4 {
+  font-family: var(--font-mono);
+  font-size: 1.25rem; /* 20px */
+  line-height: 1.5em; /* 30px */
+  letter-spacing: 0em;
+  font-weight: 700;
+}
+
+@utility text-preset-5 {
+  font-family: var(--font-mono);
+  font-size: 1rem; /* 16px */
+  line-height: 1.5em; /* 24px */
+  letter-spacing: 0em;
+  font-weight: 700;
+}
+
+@utility text-preset-6 {
+  font-family: var(--font-mono);
+  font-size: 0.8125rem; /* 13px */
+  line-height: 1.4615em; /* 19px */
+  letter-spacing: 0em;
+  font-weight: 700;
+}
+
+body {
+  margin: 0;
+}
