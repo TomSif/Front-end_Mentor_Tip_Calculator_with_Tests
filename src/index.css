@@ -1,7 +1,24 @@
-@import "tailwindcss";
+@import 'tailwindcss';
+
+/* space-mono-regular - latin */
+@font-face {
+  font-display: swap;
+  font-family: 'Space Mono';
+  font-style: normal;
+  font-weight: 400;
+  src: url('/fonts/space-mono-v17-latin-regular.woff2') format('woff2');
+}
+/* space-mono-700 - latin */
+@font-face {
+  font-display: swap;
+  font-family: 'Space Mono';
+  font-style: normal;
+  font-weight: 700;
+  src: url('/fonts/space-mono-v17-latin-700.woff2') format('woff2');
+}
 
 @theme {
-  --font-mono: "Space Mono", ui-monospace, monospace;
+  --font-mono: 'Space Mono', ui-monospace, monospace;
 
   --color-grey-600: #3d6666;
   --color-grey-550: #547878;
