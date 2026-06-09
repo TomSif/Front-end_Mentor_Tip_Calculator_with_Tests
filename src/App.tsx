@@ -8,16 +8,16 @@ const TIP_PERCENTAGES: TipPercentage[] = [5, 10, 15, 25, 50]
 
 function App() {
   return (
-    <div className="bg-grey-200 flex min-h-svh flex-col items-center justify-start py-12.5">
-      <header className="w-full pb-10">
+    <div className="bg-grey-200 flex min-h-svh flex-col items-center justify-start py-12.5 lg:justify-center">
+      <header className="w-full pb-10 lg:pb-22">
         <img src="/images/logo.svg" alt="Logo splitter" className="mx-auto" />
       </header>
-      <main className="flex flex-col items-center justify-center gap-8 rounded-2xl bg-white px-6 py-8">
+      <main className="flex flex-col items-center justify-center gap-8 rounded-2xl bg-white px-6 py-8 lg:max-h-120 lg:min-h-0 lg:max-w-230 lg:flex-row lg:px-8">
         <section className="w-full">
           <form action="" className="flex flex-col items-start gap-8 px-2">
             <div className="flex w-full flex-col gap-2">
               <Label label={'Bill'} id={'bill'} />
-              <Input id={'bill'} span={'/public/images/icon-dollar.svg'} />
+              <Input id={'bill'} span={'/images/icon-dollar.svg'} />
             </div>
             <div className="flex w-full flex-col gap-2">
               <Label label={'Select Tip %'} id={'select'} />
@@ -42,14 +42,16 @@ function App() {
             </div>
             <div className="flex w-full flex-col gap-2">
               <Label label={'Number of People'} id={'people'} />
-              <Input id={'people'} span={'/public/images/icon-person.svg'} />
+              <Input id={'people'} span={'/images/icon-person.svg'} />
             </div>
           </form>
         </section>
-        <section className="flex w-full flex-col gap-6 rounded-2xl bg-green-900 p-6">
-          <Result label={'Tip Amount'} result={0} />
-          <Result label={'Total'} result={0} />
-          <button className="bg-green-750 text-preset-4 w-full rounded-lg py-2 text-center text-green-800 hover:bg-green-400 hover:text-green-900 active:bg-green-200 active:text-green-900">
+        <section className="flex w-full flex-col justify-between gap-6 rounded-2xl bg-green-900 p-6 lg:min-h-100 lg:max-w-103">
+          <div className="flex flex-col gap-6">
+            <Result label={'Tip Amount'} result={0} />
+            <Result label={'Total'} result={0} />
+          </div>
+          <button className="bg-green-750 text-preset-4 w-full rounded-lg py-2 text-center text-green-800 hover:bg-green-400 hover:text-green-900 active:bg-green-200 active:text-green-900 lg:mb-4">
             RESET
           </button>
         </section>

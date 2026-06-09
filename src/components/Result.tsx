@@ -13,7 +13,7 @@ const Result = ({ label, result }: ResultProps) => {
       <div
         role="status"
         aria-live="polite"
-        className="text-preset-2 text-right text-green-400"
+        className="text-preset-2 lg:text-preset-1 text-right text-green-400"
       >
         ${result ? result : '0.00'}
       </div>
