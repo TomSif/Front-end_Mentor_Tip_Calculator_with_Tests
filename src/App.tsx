@@ -1,4 +1,6 @@
 import { useState } from 'react'
+import { calculateTipAmount } from './lib/calculation'
+import { calculateTotalAmount } from './lib/calculation'
 import Label from './components/Label'
 import Input from './components/Input'
 import TipButton from './components/TipButton'
@@ -33,17 +35,6 @@ function App() {
     setTipPercent(null)
     setCustomValue('')
     setPeopleTouched(false)
-  }
-
-  const tipAmountCalcul = () => {
-    if (tipPercent === null || numberOfPeople === 0) return 0
-    const tipAmount = (bill * (tipPercent / 100)) / numberOfPeople
-    return Number(tipAmount.toFixed(2))
-  }
-  const totalAmountCalcul = () => {
-    if (tipPercent === null || numberOfPeople === 0) return 0
-    const totalAmount = (bill * (1 + tipPercent / 100)) / numberOfPeople
-    return Number(totalAmount.toFixed(2))
   }
 
   return (
@@ -112,8 +103,18 @@ function App() {
         </section>
         <section className="flex w-full flex-col justify-between gap-6 rounded-2xl bg-green-900 p-6 lg:min-h-100 lg:max-w-103">
           <div className="flex flex-col gap-6">
-            <Result label={'Tip Amount'} result={tipAmountCalcul()} />
-            <Result label={'Total'} result={totalAmountCalcul()} />
+            <Result
+              label={'Tip Amount'}
+              result={calculateTipAmount({ bill, tipPercent, numberOfPeople })}
+            />
+            <Result
+              label={'Total'}
+              result={calculateTotalAmount({
+                bill,
+                numberOfPeople,
+                tipPercent,
+              })}
+            />
           </div>
           <button
             onClick={handleReset}
