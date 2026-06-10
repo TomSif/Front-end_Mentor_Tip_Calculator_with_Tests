@@ -67,33 +67,33 @@ function App() {
                 isError={false}
               />
             </div>
-            <div className="flex w-full flex-col gap-2">
-              <Label label={'Select Tip %'} id={'select'} isError={false} />
-              <fieldset className="w-full">
-                <ul className="grid w-full grid-cols-2 gap-4 md:grid-cols-3">
-                  {TIP_PERCENTAGES.map((value) => (
-                    <li key={value} className="w-full max-w-147 min-w-29">
-                      <TipButton
-                        percent={value}
-                        onClick={handlePercent}
-                        isActive={tipPercent === value && customValue === ''}
-                      />
-                    </li>
-                  ))}
-                  <li>
-                    <input
-                      type="number"
-                      name="custom"
-                      id="custom"
-                      value={customValue}
-                      placeholder="Custom"
-                      className="bg-grey-50 placeholder:text-grey-300 text-preset-3 w-full rounded-md px-4 py-2 text-center"
-                      onChange={handleCustomTip}
+            <fieldset className="w-full">
+              <legend className="text-preset-5 text-grey-500 mb-2 w-full">
+                Select Tip %
+              </legend>
+              <ul className="grid w-full grid-cols-2 gap-4 md:grid-cols-3">
+                {TIP_PERCENTAGES.map((value) => (
+                  <li key={value} className="w-full max-w-147 min-w-29">
+                    <TipButton
+                      percent={value}
+                      onClick={handlePercent}
+                      isActive={tipPercent === value && customValue === ''}
                     />
                   </li>
-                </ul>
-              </fieldset>
-            </div>
+                ))}
+                <li>
+                  <input
+                    type="number"
+                    name="custom"
+                    id="custom"
+                    value={customValue}
+                    placeholder="Custom"
+                    className="bg-grey-50 placeholder:text-grey-300 text-preset-3 w-full rounded-md px-4 py-2 text-center"
+                    onChange={handleCustomTip}
+                  />
+                </li>
+              </ul>
+            </fieldset>
             <div className="flex w-full flex-col gap-2">
               <Label
                 label={'Number of People'}
