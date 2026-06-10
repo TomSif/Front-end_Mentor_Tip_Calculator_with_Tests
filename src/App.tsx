@@ -118,7 +118,7 @@ function App() {
           <button
             onClick={handleReset}
             type="button"
-            className="bg-green-750 text-preset-4 w-full rounded-lg py-2 text-center text-green-800 hover:bg-green-400 hover:text-green-900 active:bg-green-200 active:text-green-900 lg:mb-4"
+            className="active:bg-green-750 text-preset-4 w-full rounded-lg bg-green-400 py-2 text-center text-green-900 hover:bg-green-200 hover:text-green-900 active:text-green-800 lg:mb-4"
           >
             RESET
           </button>
