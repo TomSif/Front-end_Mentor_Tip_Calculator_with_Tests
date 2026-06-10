@@ -3,6 +3,11 @@ interface ResultProps {
   result: number
 }
 
+const formatter = new Intl.NumberFormat('en-US', {
+  style: 'currency',
+  currency: 'USD',
+})
+
 const Result = ({ label, result }: ResultProps) => {
   return (
     <div className="flex w-full items-center justify-between">
@@ -13,9 +18,10 @@ const Result = ({ label, result }: ResultProps) => {
       <div
         role="status"
         aria-live="polite"
+        aria-label={label}
         className="text-preset-2 lg:text-preset-1 text-right text-green-400"
       >
-        ${result ? result : '0.00'}
+        {formatter.format(result)}
       </div>
     </div>
   )
