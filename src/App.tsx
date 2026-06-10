@@ -1,6 +1,5 @@
 import { useState } from 'react'
-import { calculateTipAmount } from './lib/calculation'
-import { calculateTotalAmount } from './lib/calculation'
+import { calculateTipAmount, calculateTotalAmount } from './lib/calculation'
 import Label from './components/Label'
 import Input from './components/Input'
 import TipButton from './components/TipButton'
