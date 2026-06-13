@@ -76,6 +76,7 @@ function App() {
                     type="number"
                     name="custom"
                     id="custom"
+                    onFocus={(e) => e.target.select()}
                     value={customValue}
                     placeholder="Custom"
                     className="bg-grey-50 placeholder:text-grey-300 text-preset-3 w-full rounded-md px-4 py-2 text-center"

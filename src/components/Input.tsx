@@ -13,6 +13,7 @@ const Input = ({ id, icon, onChange, value, isError }: InputProps) => {
     <div className="text-preset-3! relative w-full text-green-900">
       <input
         value={value}
+        onFocus={(e) => e.target.select()}
         type="number"
         id={id}
         placeholder="0"
