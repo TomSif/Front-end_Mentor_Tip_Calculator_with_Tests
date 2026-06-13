@@ -58,4 +58,43 @@ describe('App', () => {
       screen.getByRole('status', { name: 'Tip Amount' }),
     ).toHaveTextContent('$0.00')
   })
+  it('see the result when the custom input is filled', async () => {
+    // Arrange
+    render(<App />)
+    const user = userEvent.setup()
+    const billInput = screen.getByLabelText('Bill')
+    const numberOfPeopleInput = screen.getByLabelText('Number of People')
+    const customInput = screen.getByPlaceholderText('Custom')
+    // Act
+    await user.type(billInput, '100')
+    await user.type(numberOfPeopleInput, '2')
+    await user.type(customInput, '5')
+
+    // Assert
+    expect(screen.getByRole('status', { name: 'Total' })).toHaveTextContent(
+      '$52.50',
+    )
+    expect(
+      screen.getByRole('status', { name: 'Tip Amount' }),
+    ).toHaveTextContent('$2.50')
+  })
+  it("see the can't be zero message when number of people is zero", async () => {
+    // Arrange
+    render(<App />)
+    const user = userEvent.setup()
+    const billInput = screen.getByLabelText('Bill')
+    const numberOfPeopleInput = screen.getByLabelText('Number of People')
+    const customInput = screen.getByPlaceholderText('Custom')
+    // Act
+    await user.type(numberOfPeopleInput, '1')
+    await user.type(billInput, '100')
+    await user.type(customInput, '5')
+    await user.type(numberOfPeopleInput, '0')
+
+    // Assert
+    expect(screen.getByText("Can't be zero")).toHaveTextContent("Can't be zero")
+    expect(screen.getByRole('status', { name: 'Total' })).toHaveTextContent(
+      '$0.00',
+    )
+  })
 })
